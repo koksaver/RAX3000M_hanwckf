@@ -1,21 +1,25 @@
-**English** | [中文](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
+Quickstart
+Run git clone --depth=1 https://github.com/hanwckf/immortalwrt-mt798x.git to clone the source code.
 
-# Actions-OpenWrt
+Run cd immortalwrt-mt798x to enter source directory.
 
-[![LICENSE](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square&label=LICENSE)](https://github.com/P3TERX/Actions-OpenWrt/blob/master/LICENSE)
-![GitHub Stars](https://img.shields.io/github/stars/P3TERX/Actions-OpenWrt.svg?style=flat-square&label=Stars&logo=github)
-![GitHub Forks](https://img.shields.io/github/forks/P3TERX/Actions-OpenWrt.svg?style=flat-square&label=Forks&logo=github)
+Run ./scripts/feeds update -a to obtain all the latest package definitions defined in feeds.conf / feeds.conf.default
 
-A template for building OpenWrt with GitHub Actions
+Run ./scripts/feeds install -a to install symlinks for all obtained packages into package/feeds/
 
-## Usage
+Copy the configuration file for your device from the defconfig directory to the project root directory and rename it .config
 
-- Click the [Use this template](https://github.com/P3TERX/Actions-OpenWrt/generate) button to create a new repository.
-- Generate `.config` files using [Lean's OpenWrt](https://github.com/coolsnowwolf/lede) source code. ( You can change it through environment variables in the workflow file. )
-- Push `.config` file to the GitHub repository.
-- Select `Build OpenWrt` on the Actions page.
-- Click the `Run workflow` button.
-- When the build is complete, click the `Artifacts` button in the upper right corner of the Actions page to download the binaries.
+# MT7981
+cp -f defconfig/mt7981-ax3000.config .config
+
+# MT7986
+cp -f defconfig/mt7986-ax6000.config .config
+
+# MT7986 256M Low Memory
+cp -f defconfig/mt7986-ax6000-256m.config .config
+Run make menuconfig to select your preferred configuration for the toolchain, target system & firmware packages.
+
+Run make -j$(nproc) to build your firmware. This will download all sources, build the cross-compile toolchain and then cross-compile the GNU/Linux kernel & all chosen applications for your target system.
 
 ## Tips
 
