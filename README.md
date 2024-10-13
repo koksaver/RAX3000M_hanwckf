@@ -1,11 +1,16 @@
 Quickstart
-Run git clone --depth=1 https://github.com/hanwckf/immortalwrt-mt798x.git to clone the source code.
+Run to clone the source code.
+git clone --depth=1 https://github.com/hanwckf/immortalwrt-mt798x.git
 
-Run cd immortalwrt-mt798x to enter source directory.
 
-Run ./scripts/feeds update -a to obtain all the latest package definitions defined in feeds.conf / feeds.conf.default
+Run  to enter source directory.
+cd immortalwrt-mt798x
 
-Run ./scripts/feeds install -a to install symlinks for all obtained packages into package/feeds/
+Run  to obtain all the latest package definitions defined in feeds.conf / feeds.conf.default
+./scripts/feeds update -a
+
+Run  to install symlinks for all obtained packages into package/feeds/
+./scripts/feeds install -a
 
 Copy the configuration file for your device from the defconfig directory to the project root directory and rename it .config
 
