@@ -1,18 +1,18 @@
-Quickstart
-Run to clone the source code.
+# Quickstart
+# Run to clone the source code.
 git clone --depth=1 https://github.com/hanwckf/immortalwrt-mt798x.git
 
 
-Run  to enter source directory.
+# Run  to enter source directory.
 cd immortalwrt-mt798x
 
-Run  to obtain all the latest package definitions defined in feeds.conf / feeds.conf.default
+# Run  to obtain all the latest package definitions defined in feeds.conf / feeds.conf.default
 ./scripts/feeds update -a
 
-Run  to install symlinks for all obtained packages into package/feeds/
+# Run  to install symlinks for all obtained packages into package/feeds/
 ./scripts/feeds install -a
 
-Copy the configuration file for your device from the defconfig directory to the project root directory and rename it .config
+# Copy the configuration file for your device from the defconfig directory to the project root directory and rename it .config
 
 # MT7981
 cp -f defconfig/mt7981-ax3000.config .config
