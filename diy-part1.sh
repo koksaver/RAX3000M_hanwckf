@@ -18,5 +18,6 @@
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 sed -i 's/192.168.1.1/192.168.31.1/g' package/base-files/files/bin/config_generate
 echo 'src-git istore https://github.com/linkease/istore;main' >> feeds.conf.default
+echo 'src-git 5G_Modem_Support https://github.com/Siriling/5G-Modem-Support;main' >> feeds.conf.default
 #sed -i '1i src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
 #sed -i '2i src-git small https://github.com/kenzok8/small' feeds.conf.default
